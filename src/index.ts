@@ -7,7 +7,7 @@ export function hello(who: string = world): string {
 
 const a: number[] = [9, 4, 5, 7, 3];
 
-function binaryInsertionSort(arr: number[]): number[] {
+export function binaryInsertionSort(arr: number[]): number[] {
   let n = arr.length;
 
   for (let i = 1; i < n; i++) {
