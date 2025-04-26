@@ -1,0 +1,39 @@
+{
+	"name": "Next.js + TypeScript (Docker)",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceFolder": "/workspaces/sort",
+	"remoteUser": "node",
+	"overrideCommand": false,
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": "false",
+			"username": "node",
+			"upgradePackages": true
+		}
+	},
+	"postCreateCommand": "yarn install",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"typescript.tsdk": "node_modules/typescript/lib",
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ms-vscode.vscode-typescript-next"
+			]
+		}
+	},
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js App",
+			"onAutoForward": "openBrowser"
+		}
+	},
+	"mounts": [],
+	"updateRemoteUserUID": false
+}
